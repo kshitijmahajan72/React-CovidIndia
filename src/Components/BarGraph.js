@@ -14,9 +14,8 @@ class BarGraph extends React.Component {
 
     render() {
         const options={
-            responsive: true,
             legend: {
-                display: false,
+                display: true,
             },
             type:'bar',
             
@@ -55,8 +54,8 @@ class BarGraph extends React.Component {
             <div>
                 <Bar
                 data={data}
-                width={150}
-                height={100}
+                width={100}
+                height={30}
                 options={options}
             />
             </div>

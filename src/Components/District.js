@@ -1,5 +1,5 @@
 import React from 'react';
-import BarGraph from './BarGraph';
+
 class District extends React.Component {
     constructor(props) {
         super(props);
@@ -29,7 +29,7 @@ class District extends React.Component {
                             }
                             </tbody>
                             </table>
-                            <BarGraph district={district}></BarGraph>
+                            
                             </div>
                          :null
                 }

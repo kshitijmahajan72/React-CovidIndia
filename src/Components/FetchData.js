@@ -2,7 +2,7 @@ import React from 'react';
 import axios from "axios";
 import District from './District';
 import StateCount from './StateCount';
-
+import BarGraph from './BarGraph';
 
 
 class FetchData extends React.Component {
@@ -57,6 +57,11 @@ class FetchData extends React.Component {
                     
                     <div id="main">
                         <div><b>Active Cases: </b>{active}     <b>Total Cases: </b>{confirmed}     <b>Deaths:</b> {deceased}     <b>Total recovered: </b>{recovered}</div>
+                        {
+                            dist?
+                            <BarGraph district={dist}></BarGraph>:
+                            null
+                        }
                         <div id="sidebar">
                     
                    <table><tbody>
