@@ -33,6 +33,11 @@ class FetchData extends React.Component {
         })
     
       }
+      hide(){
+        this.setState({
+            dist:false
+        })
+      }
     render() {
         const {covidList,dist} = this.state
         let active=0, confirmed=0, deceased=0, recovered=0
@@ -57,7 +62,11 @@ class FetchData extends React.Component {
                     
                     <div id="main">
                         <div><b>Active Cases: </b>{active}     <b>Total Cases: </b>{confirmed}     <b>Deaths:</b> {deceased}     <b>Total recovered: </b>{recovered}</div>
+                        
                         {
+                            dist?
+                            <button style={{marginRight: 1}} onClick={this.hide.bind(this) }>Hide</button>:null
+                        }{
                             dist?
                             <BarGraph district={dist}></BarGraph>:
                             null
