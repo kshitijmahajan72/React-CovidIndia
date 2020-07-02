@@ -3,7 +3,7 @@ import axios from "axios";
 import District from './District';
 import StateCount from './StateCount';
 import BarGraph from './BarGraph';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class FetchData extends React.Component {
     constructor(props) {
@@ -59,27 +59,41 @@ class FetchData extends React.Component {
         return (
             <div>
                 {
+                    <div>
+                    <div className="jumbotron">
+                    <span className="display-3">CoVID-19 Cases India</span> <img className="App-logo" height="10" padding="5%" alt="corona"src="/Resources/coronavirus.png"></img>
                     
+                    </div>
                     <div id="main">
-                        <div><b>Active Cases: </b>{active}     <b>Total Cases: </b>{confirmed}     <b>Deaths:</b> {deceased}     <b>Total recovered: </b>{recovered}</div>
-                        
+                        <table className="row justify-content-center display-4 mb-1">
+                            <tbody>
+                            <tr><td><b>Total: </b></td><td><span className="badge badge-pill badge-primary">{confirmed.toLocaleString('en-IN', { minimumFractionDigits: 0 })}</span></td></tr>
+                            <tr><td><b>Active: </b></td><td><span className="badge badge-pill badge-danger" >{active.toLocaleString('en-IN', { minimumFractionDigits: 0 })}</span></td></tr>     
+                            <tr><td><b>Recovered: </b></td><td><span className="badge badge-pill badge-success">{recovered.toLocaleString('en-IN', { minimumFractionDigits: 0 })}</span></td></tr>
+                            <tr><td><b>Deaths:</b></td><td><span className="badge badge-pill badge-dark">{deceased.toLocaleString('en-IN', { minimumFractionDigits: 0 })}</span></td></tr>     
+                            </tbody>
+                        </table>
+                        <div className="mt-md-3 ">
                         {
                             dist?
-                            <button style={{marginRight: 1}} onClick={this.hide.bind(this) }>Hide</button>:null
+                            <button class="btn btn-info float-right" onClick={this.hide.bind(this) }>Hide</button>:null
                         }{
                             dist?
-                            <BarGraph district={dist}></BarGraph>:
+                            <BarGraph district={dist} class="container"></BarGraph>:
                             null
                         }
+                        </div>
                         <div id="sidebar">
                     
-                   <table><tbody>
+                   <table className="table table-striped table-hover table-responsive m-md-5 ">
+                       <thead className="thead-dark"><tr><th colSpan="2" >STATES</th></tr></thead>
+                       <tbody>
                        {
                            
                        Object.entries(covidList).map((key1,index)=>
                        
                        <tr key={index} >
-                           <td><b onClick={()=>this.setDistrict(key1[1])}>{key1[0]}</b></td><td><StateCount state={key1[1]}></StateCount>
+                           <td><b onClick={()=>this.setDistrict(key1[1])}>{key1[0]}</b></td><td className="text-danger"><StateCount state={key1[1]}></StateCount>
                            </td>
                            </tr>
                        
@@ -88,12 +102,13 @@ class FetchData extends React.Component {
                        </tbody>
                    </table>
                    </div>
-                   <div id="page-wrap">
+                   <div id="page-wrap" className=" m-md-5 ">
                    {
                        dist ?
                         <District district={dist}></District>:
                         null
                    }
+                   </div>
                    </div>
                    </div>
                 }              

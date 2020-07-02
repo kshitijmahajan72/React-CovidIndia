@@ -40,10 +40,10 @@ class BarGraph extends React.Component {
                   },
                   {
                     label: 'Recovered',
-                    backgroundColor: 'rgba(155,231,91,0.2)',
+                    backgroundColor: 'rgba(124,252,0,0.5)',
                     borderColor: 'rgba(255,99,132,1)',
                     borderWidth: 1,
-                    hoverBackgroundColor: 'skyblue',
+                    hoverBackgroundColor: 'rgb(124,252,0)',
                     hoverBorderColor: 'rgba(255,99,132,1)',
                     data: recovered
                   }

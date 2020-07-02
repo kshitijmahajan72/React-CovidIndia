@@ -10,6 +10,9 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    width: 10%;
+    height: 10%;
+    padding-right: 5%;
   }
 }
 
@@ -48,5 +51,5 @@
 
 #page-wrap  {
   width:40% ;
-  float: right;
+  float: left;
 }
