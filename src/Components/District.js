@@ -20,11 +20,11 @@ class District extends React.Component {
                             <table className="table table-striped table-hover table-responsive">
                                 <thead>
                                 <tr>
-                                    <th class="alert alert-dark">District Name</th>
-                                    <th class="alert alert-primary" >Total</th>
-                                    <th class="alert alert-danger">Active</th>
-                                    <th class="alert alert-success">Recovered</th>
-                                    <th class="alert alert-secondary">Deaths</th>
+                                    <th className="alert alert-dark">District Name</th>
+                                    <th className="alert alert-primary" >Total</th>
+                                    <th className="alert alert-danger">Active</th>
+                                    <th className="alert alert-success">Recovered</th>
+                                    <th className="alert alert-secondary">Deaths</th>
                                 </tr>
                                 </thead>
                                 <tbody>

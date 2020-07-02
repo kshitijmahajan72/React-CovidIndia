@@ -61,7 +61,7 @@ class FetchData extends React.Component {
                 {
                     <div>
                     <div className="jumbotron">
-                    <span className="display-3">CoVID-19 Cases India</span> <img className="App-logo" height="10" padding="5%" alt="corona"src="/Resources/coronavirus.png"></img>
+                    <span className="display-3">CoVID-19 Cases India</span> <img className="App-logo" padding="5%" alt="corona"src="/Resources/coronavirus.png"></img>
                     
                     </div>
                     <div id="main">
@@ -76,10 +76,10 @@ class FetchData extends React.Component {
                         <div className="mt-md-3 ">
                         {
                             dist?
-                            <button class="btn btn-info float-right" onClick={this.hide.bind(this) }>Hide</button>:null
+                            <button className="rounded-circle float-right" onClick={this.hide.bind(this) }>Hide</button>:null
                         }{
                             dist?
-                            <BarGraph district={dist} class="container"></BarGraph>:
+                            <BarGraph district={dist}></BarGraph>:
                             null
                         }
                         </div>
